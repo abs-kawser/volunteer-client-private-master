@@ -29,7 +29,7 @@ const AdminLogin = () => {
 
     const handleFormSubmit = (e) => {
         // console.log(adminInfo);
-        fetch(`https://dhrubo-s-volunteer-server.herokuapp.com/adminLogin`, {
+fetch(`/adminLogin`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(adminInfo)

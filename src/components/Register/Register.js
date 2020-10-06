@@ -13,7 +13,7 @@ const Register = (props) => {
     const { id } = useParams();
 
     useEffect(() => {
-        fetch(`https://dhrubo-s-volunteer-server.herokuapp.com/search/${id}`)
+fetch(`http://localhost:4000/search/${id}`) 
             .then(res => res.json())
             .then(data => {
                 setItem(data)
@@ -44,7 +44,7 @@ const Register = (props) => {
     }
 
     const handleFormSubmit = (e) => {
-        fetch(`https://dhrubo-s-volunteer-server.herokuapp.com/saveEvent`, {
+        fetch(`http://localhost:4000/saveEvent`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(userEvent)

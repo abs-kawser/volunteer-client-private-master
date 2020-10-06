@@ -3,7 +3,6 @@ import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBIcon } from 'mdbreact';
 import DatePicker from 'react-datepicker';
 import Axios from 'axios';
 import { Redirect } from 'react-router-dom';
-import Home from '../../Home/Home';
 
 
 const AddEvent = () => {
@@ -32,7 +31,7 @@ const AddEvent = () => {
 
     const handleFormSubmit = (e) => {
         console.log(eventInfo)
-        fetch('https://dhrubo-s-volunteer-server.herokuapp.com/addNewEventItem', {
+        fetch('http://localhost:4000/addNewEventItem', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(eventInfo)
@@ -63,7 +62,7 @@ const AddEvent = () => {
     const upload = (e) => {
         uploadImage(e.target.files[0])
             .then(resp => {
-                // console.log(resp.data.data.thumb.url) // I'm aware it's data.data, that is how it returns stuff
+                
                 const newObject = { ...eventInfo }
                 newObject.imageUrl = resp.data.data.thumb.url;
                 setEventInfo(newObject);
@@ -112,7 +111,7 @@ const AddEvent = () => {
                     </div>
                 </form>
             </div>
-            {/* <form action='https://volunteer-server-by-dhrubo.herokuapp.com/upload' method='post' encType="multipart/form-data"> */}
+            
 
         </div>
     );

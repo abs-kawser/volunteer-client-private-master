@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import LandingPage from '../LayOut/LandingPage';
 import ShowItem from './ShowItem';
 import EventListStyle from './EventListStyle.css';
-
+//EventListStyle
 const EventList = () => {
     const [allEvent, setAllEvent] = useState([])
 
     useEffect(() => {
-        fetch(`https://dhrubo-s-volunteer-server.herokuapp.com/allEvents`)
+fetch(`http://localhost:4000/allEvents`)
             .then(res => res.json())
             .then(data => {
                 setAllEvent(data)

@@ -4,7 +4,7 @@ import { UserContext } from '../../App';
 import logo from '../../logos/logo.png';
 
 const ProfileHeader = () => {
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext); //------- global logged in user
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext); //
     const { displayName, photo, email } = loggedInUser;
 
     return (

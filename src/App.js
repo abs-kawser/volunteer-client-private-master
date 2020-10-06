@@ -18,7 +18,8 @@ export const UserContext = createContext();
 export const AdminContext = createContext();
 
 function App() {
-  const [loggedInUser, setLoggedInUser] = useState({}); //------- global logged in user
+  const [loggedInUser, setLoggedInUser] = useState({}); 
+ 
   const [loggedInAdmin, setLoggedInAdmin] = useState({})
   
   

@@ -5,7 +5,7 @@ const EventListTable = () => {
     const [state, setState] = useState(true);
 
     useEffect(() => {
-        fetch(`https://dhrubo-s-volunteer-server.herokuapp.com/allEvents`)
+fetch(`http://localhost:4000/allEvents`)
             .then(res => res.json())
             .then(data => {
                 // console.log(data.length, data)
@@ -15,7 +15,7 @@ const EventListTable = () => {
 
     const handleDelete = (id) => {
         // console.log(id)
-        fetch(`https://dhrubo-s-volunteer-server.herokuapp.com/deleteItem/${id}`, {
+ fetch(`http://localhost:4000/deleteItem/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())

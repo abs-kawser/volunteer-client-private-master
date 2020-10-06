@@ -5,14 +5,15 @@ import ProfileHeader from './ProfileHeader';
 import ShowMyEvent from './ShowMyEvent';
 
 const Profile = () => {
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext); //------- global logged in user
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext); 
+    
     const { displayName, photo, email } = loggedInUser;
 
     const [myEvents, setMyEvents] = useState([])
     const [state, setState] = useState(true)
 
     useEffect(() => {
-        fetch(`https://dhrubo-s-volunteer-server.herokuapp.com/userEventList/${email}`)
+fetch(`http://localhost:4000/userEventList/${email}`)
             .then(res => res.json())
             .then(data => {
                 setMyEvents(data);

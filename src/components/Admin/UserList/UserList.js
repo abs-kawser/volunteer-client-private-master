@@ -7,7 +7,7 @@ const UserList = () => {
     const [state, setState] = useState(true);
     
     useEffect(() => {
-        fetch(`https://dhrubo-s-volunteer-server.herokuapp.com/userEventList`)
+fetch(`http://localhost:4000/userEventList`)
             .then(res => res.json())
             .then(data => {
                 setUserList(data)
@@ -19,7 +19,7 @@ const UserList = () => {
 
     const handleDelete = (id) => {
         // console.log(id)
-        fetch(`https://dhrubo-s-volunteer-server.herokuapp.com/deleteUserFromEvent/${id}`,{
+ fetch(`http://localhost:4000/deleteUserFromEvent/${id}`,{
             method: 'DELETE'
         })
         .then(res=>res.json())
@@ -57,7 +57,7 @@ const UserList = () => {
                                         <td>{each.email}</td>
                                         <td>{each.eventTitle}</td>
                                         <td>{each.eventDate}</td>
-                                        <td><button style={{ backgroundColor: 'red' }} onClick={() => handleDelete(each._id)}><img src={deleteIcon} height="20" /></button></td>
+                                        <td><button style={{ backgroundColor: 'red' }} onClick={() => handleDelete(each._id)}><img src={deleteIcon} height="20" /></button></td> 
                                     </tr>
                                 )
                                 :

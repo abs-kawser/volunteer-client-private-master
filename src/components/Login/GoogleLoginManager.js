@@ -22,7 +22,7 @@ export const checkSignedIn = () => {
         }
         
         if(loggedInUser){
-            // console.log(loggedInUser);
+            
             return loggedInUser
         }
         
@@ -45,7 +45,7 @@ export const googleSignIn = () => {
             return userData;
         })
         .catch(error => {
-            // console.log(error.message)
+            
         });
 }
 

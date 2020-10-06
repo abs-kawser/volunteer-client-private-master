@@ -7,7 +7,7 @@ const ShowMyEvent = (props) => {
     const location = useLocation()
 
     useEffect(() => {
-        fetch(`https://dhrubo-s-volunteer-server.herokuapp.com/search/${item.eventId}`)
+        fetch(`http://localhost:4000/search/${item.eventId}`)
             .then(res => res.json())
             .then(data => {
                 setEventInfo(data)
@@ -18,7 +18,7 @@ const ShowMyEvent = (props) => {
     const handleCancel = (id) => {
 
         if (window.confirm('Do you want to remove this item?')) {
-            fetch(`https://dhrubo-s-volunteer-server.herokuapp.com/deleteMyEvent/${id}`, {
+fetch(`http://localhost:4000/deleteMyEvent/${id}`, {
                 method: 'DELETE'
             })
             .then(res => res.json())
